@@ -468,7 +468,7 @@ WARNING
         bundle_without = env("BUNDLE_WITHOUT") || "development:test"
         bundle_bin     = "bundle"
         bundle_command = "#{bundle_bin} install --without #{bundle_without} --path vendor/bundle --binstubs #{bundler_binstubs_path}"
-        bundle_command << " -j#{env("BUNDLE_JOBS") || 4}"
+        bundle_command << " -j#{env("BUNDLE_JOBS") || 1}"
 
         if bundler.windows_gemfile_lock?
           warn(<<WARNING, inline: true)
